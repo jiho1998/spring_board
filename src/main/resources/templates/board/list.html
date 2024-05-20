@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        const successMessage = `[[${ successMessage }]]`;
+        if(successMessage) {
+            alert(successMessage)
+        }
+    </script>
+</head>
+<body>
+<h1>????</h1>
+<div th:replace="common/header"></div>
+<table align="center" border="1">
+    <tr>
+        <th>게시글 번호</th>
+        <th>게시글 제목</th>
+        <th>게스글 내용</th>
+        <th>게시글 작석일</th>
+    </tr>
+    <tr th:each="board : ${ boardList }">
+        <td th:text="${ board.boardId }"></td>
+        <td th:text="${ board.memberId }"></td>
+        <td th:text="${ board.boardTitle }"></td>
+        <td th:text="${ board.boardContext }"></td>
+    </tr>
+</table>
+</body>
+</html>
