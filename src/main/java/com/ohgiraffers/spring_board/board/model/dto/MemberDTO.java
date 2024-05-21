@@ -8,9 +8,9 @@ public class MemberDTO {
     private String memberName;
     private String memberNickname;
     private String memberEmail;
-    private String memberPhone;
+    private int memberPhone;
 
-    public MemberDTO(String memberId, String memberPwd, String memberName, String memberNickname, String memberEmail, String memberPhone) {
+    public MemberDTO(String memberId, String memberPwd, String memberName, String memberNickname, String memberEmail, int memberPhone) {
         this.memberId = memberId;
         this.memberPwd = memberPwd;
         this.memberName = memberName;
@@ -59,11 +59,11 @@ public class MemberDTO {
         this.memberEmail = memberEmail;
     }
 
-    public String getMemberPhone() {
+    public int getMemberPhone() {
         return memberPhone;
     }
 
-    public void setMemberPhone(String memberPhone) {
+    public void setMemberPhone(int memberPhone) {
         this.memberPhone = memberPhone;
     }
 

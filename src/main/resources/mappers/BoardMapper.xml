@@ -29,4 +29,45 @@
         , BOARD_CONTEXT
         FROM BOARD
     </select>
+
+    <select id="findAllMembers" resultMap="memberResultMap">
+        SELECT
+        MEMBER_ID
+        , MEMBER_PWD
+        , MEMBER_NAME
+        , MEMBER_NICKNAME
+        , MEMBER_EMAIL
+        , MEMBER_PHONE
+        FROM MEMBER
+    </select>
+
+    <insert id="registNewBoard" parameterType="com.ohgiraffers.spring_board.board.model.dto.BoardDTO">
+            INSERT INTO BOARD
+            (
+            BOARD_ID
+            , MEMBER_ID
+            , BOARD_TITLE
+            , BOARD_CONTEXT
+            )
+            VALUES
+            (
+            #{ boardId }
+            , #{ memberId }
+            , #{ boardTitle }
+            , #{ boardContext }
+            )
+    </insert>
+
+    <update id="updateNewBoard" parameterType="com.ohgiraffers.spring_board.board.model.dto.BoardDTO">
+        UPDATE BOARD
+        SET BOARD_TITLE = #{ boardTitle }
+            , BOARD_CONTEXT = #{ boardContext }
+        WHERE BOARD_ID = #{ boardId }
+    </update>
+
+    <delete id="deleteNewBoard" parameterType="com.ohgiraffers.spring_board.board.model.dto.BoardDTO">
+        DELETE
+        FROM BOARD
+        WHERE BOARD_ID = #{ boardId }
+    </delete>
 </mapper>

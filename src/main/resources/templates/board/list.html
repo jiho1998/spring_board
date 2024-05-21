@@ -11,14 +11,14 @@
     </script>
 </head>
 <body>
-<h1>????</h1>
+<h1>게시판</h1>
 <div th:replace="common/header"></div>
 <table align="center" border="1">
     <tr>
         <th>게시글 번호</th>
-        <th>게시글 제목</th>
-        <th>게스글 내용</th>
-        <th>게시글 작석일</th>
+        <th>작성자 아이디</th>
+        <th>제목</th>
+        <th>게시글 내용</th>
     </tr>
     <tr th:each="board : ${ boardList }">
         <td th:text="${ board.boardId }"></td>

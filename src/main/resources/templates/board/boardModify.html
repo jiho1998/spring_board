@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:include="common/header.html"></div>
+<h3>게시글 수정</h3>
+<form action="/board/updateboard" method="post">
+    <label>게시글 번호 : </label><input type="number" name="boardId"><br>
+    <label>작성자 아이디 : </label><input type="text" name="memberId"><br>
+    <label>제목 : </label><input type="text" name="boardTitle"><br>
+    <label>게시글 내용 : </label><input type="text" name="boardContext"><br>
+
+    <input type="submit" value="전송">
+</form>
+</body>
+</html>
